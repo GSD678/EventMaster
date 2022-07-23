@@ -1,8 +1,19 @@
 import React from 'react'
-
-const Event = () => {
+import {Card} from 'react-bootstrap'
+const Event = ({event}) => {
   return (
-    <div>Event</div>
+    
+    <Card className='my-3 p-3 rounded'>
+      
+        <Card.Img src={event.image} variant ='top'/>
+        
+        
+        
+           <Card.Title as='div'>
+            <strong>{event.name}</strong>
+            </Card.Title > 
+    </Card>
+       
   )
 }
 

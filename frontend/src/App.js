@@ -1,6 +1,8 @@
+import React from 'react'
 import { Container } from "react-bootstrap";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import HomeScreen from "./Screens/HomeScreen";
 
 
 function App() {
@@ -9,8 +11,10 @@ function App() {
     <Header/>
     <main>
       <Container>
-          <h1>Welcome to EventMaster!</h1>
+          
+          <HomeScreen/>
       </Container>
+      
     </main>
     <Footer/>
     </>
