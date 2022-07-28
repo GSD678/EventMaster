@@ -10,15 +10,11 @@ const Event = ({event}) => {
           <Card.Title as='div'>
             <strong>{event.name}</strong>
           </Card.Title > 
-          <Card.Text as='div'>
-            <div className='my-3'>
-              This event has {event.followers} followers
-            </div>
-          </Card.Text>
+          
           <Card.Text as='h3'>${event.ticketprice}</Card.Text>
           <Card.Text as='div'>
             <div className='my-3'>
-              Hurry! There are only {event.ticketsavail} left!
+              Hurry! There are only {event.ticketsavail} tickets left and {event.followers} people are interested in this event.
             </div>
           </Card.Text>
         </Card.Body>
