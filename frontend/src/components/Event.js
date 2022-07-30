@@ -9,14 +9,16 @@ const Event = ({event}) => {
         <Card.Body>
           <Card.Title as='div'>
             <strong>{event.name}</strong>
+            <Card.Text as='h6'>{event.city}</Card.Text>
+            <small>{event.date}</small>
           </Card.Title > 
           
-          <Card.Text as='h3'>${event.ticketprice}</Card.Text>
-          <Card.Text as='div'>
-            <div className='my-3'>
-              Hurry! There are only {event.ticketsavail} tickets left and {event.followers} people are interested in this event.
-            </div>
-          </Card.Text>
+          <Card.Text >Tickets ${event.ticketprice} and up</Card.Text>
+          
+        
+           <Card.Text>
+           <i class="fa fa-users" aria-hidden="true"></i> {event.followers} Followers  
+           </Card.Text>  
         </Card.Body>
            
     </Card>

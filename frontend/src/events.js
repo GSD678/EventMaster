@@ -9,9 +9,9 @@ const events = [
       ticketprice: 50.00,
       ticketsavail: 100,
       followers: 150,
-      date:'Thu, Jul 28, 2022, 10:00 AM – Sun, Jul 31, 2022, 10:00 PM PDT',
-      location:'Sky Meadows Park,18601 Sky Meadows Lane,Snohomish, WA 98290'
-      
+      date:'Thu, Jul 28, 2022, 10:00 AM  Sun, Jul 31, 2022, 10:00 PM PDT',
+      location:'Sky Meadows Park,18601 Sky Meadows Lane,Snohomish, WA 98290',
+      city :'Snohomish, WA'
     },
     {
     _id: '2',
@@ -23,21 +23,21 @@ const events = [
       ticketsavail: 50,
       followers: 250,
       date:'Sat, Jul 30, 2022, 12:00 PM ,Sun, Jul 31, 2022, 6:00 PM PDT ',
-      location:'Marina Park,25 Lakeshore Plaza,Kirkland, WA 98033'
-      
+      location:'Marina Park,25 Lakeshore Plaza,Kirkland, WA 98033',
+      city :'Kirkland, WA'
     },
     {
       _id: '3',
-      name: 'Peace Peloton Columbia City Night Market',
+      name: 'Columbia City Night Market',
       image: '/images/event3.jpg',
       description:'The Dopest Year-Round Night Market in Seattle',
       category: 'Market',
       ticketprice: 0,
       ticketsavail: 100,
       followers: 150,
-      date:'Thu, Jul 30, 2022, 10:00 AM PDT',
-      location:'37th between Hudson and S Ferdinand,Seattle, WA 98118'
-      
+      date:'Sat, Jul 30, 2022, 10:00 AM PDT',
+      location:'37th between Hudson and S Ferdinand,Seattle, WA 98118',
+      city :'Seattle, WA'
     },
     {
     _id: '4',
@@ -49,8 +49,8 @@ const events = [
       ticketsavail: 50,
       followers: 250,
       date:'Sat, December 31, 2022, 9:00 PM ',
-      location:'Hyatt Regency Seattle,808 Howell St,Seattle, WA 98101'
-      
+      location:'Hyatt Regency Seattle,808 Howell St,Seattle, WA 98101',
+      city :'Seattle, WA'
     },
     
     {
@@ -62,9 +62,9 @@ const events = [
       ticketprice: 10.00,
       ticketsavail: 100,
       followers: 150,
-      date:' Aug 27 and 28, 2022, 10:00 AM PDT',
-      location:'Seattle Center 305 Harrison Street Seattle, WA 98109'
-      
+      date:'Sat Aug 27 and Sun 28, 2022, 10:00 AM PDT',
+      location:'Seattle Center 305 Harrison Street Seattle, WA 98109',
+      city :'Seattle, WA'
     },
     {
     _id: '6',
@@ -76,8 +76,8 @@ const events = [
       ticketsavail: 50,
       followers: 20,
       date:'Sat, July 30, 2022 10:00 AM to 6:30 PM PDT',
-      location:'Lynnwood Convention Center,3711 196th Street Southwest,Lynnwood, WA 98036'
-      
+      location:'Lynnwood Convention Center,3711 196th Street Southwest,Lynnwood, WA 98036',
+      city :'Lynnwood,WA'
     },
     
   ]
