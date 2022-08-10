@@ -1,21 +1,21 @@
 import mongoose from "mongoose";
 
-const reviewSchema = mongoose.Schema({
-    name: {
-        type: String,
-        required:true
-    },
-    rating: {
-        type: Number,
-        required:true
-    },
-    comment: {
-        type: String,
-        required:true
-    }
-}, {
-    timestamps: true
-})
+// const reviewSchema = mongoose.Schema({
+//     name: {
+//         type: String,
+//         required:true
+//     },
+//     rating: {
+//         type: Number,
+//         required:true
+//     },
+//     comment: {
+//         type: String,
+//         required:true
+//     }
+// }, {
+//     timestamps: true
+// })
 const eventSchema = mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
@@ -64,10 +64,11 @@ const eventSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    reviews: [reviewSchema]
+    // reviews: [reviewSchema]
 }, {
     timestamps: true
 })
 
 const Event = mongoose.model("Event", eventSchema)
+// console.log("event schema made")
 export default Event
