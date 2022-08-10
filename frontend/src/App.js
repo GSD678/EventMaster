@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import { Container } from 'react-bootstrap';
 import HomeScreen from "./Screens/HomeScreen";
 import EventScreen from './Screens/EventScreen';
+
+
 const App = () =>  {
   return (
     < >
@@ -13,8 +15,8 @@ const App = () =>  {
       <main>
         <Container >
           <Routes>
-            <Route path= "/" exact element = {<HomeScreen/>}/>
-            <Route path= "/event/:id" element = {<EventScreen/>}/>
+            <Route path= "/" exact element = {<HomeScreen />} />
+            <Route path= "/event/:id" element = {<EventScreen />} />
            </Routes> 
         </Container>
       </main>
