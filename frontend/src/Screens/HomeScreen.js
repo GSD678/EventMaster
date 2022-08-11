@@ -1,29 +1,37 @@
-import React,{useState, useEffect} from 'react'
+import React,{useEffect} from 'react'
+import {useDispatch, useSelector} from "react-redux"
 import { Row, Col} from 'react-bootstrap'
 import Event from '../components/Event'
-import axios from "axios";
+import {listEvents} from "../actions/eventAction.js"
+import Loader from "../components/Loader";
 
 const HomeScreen = () => {
 
-  const [events, setEvents] = useState([])
+  const dispatch= useDispatch()
+  const eventList = useSelector((state) => state.eventList)
+  const {loading, error, events} = eventList
   useEffect(() => {
-    const fetchEvents = async () => {
-      const {data} = await axios.get("/api/events")
-      setEvents(data)
-    }
-    fetchEvents()
-  })
+    dispatch(listEvents())
+  }, [dispatch])
+
   return (
-    <>
-    <h1>Latest Events</h1>
-    <Row>
-        {events.map((event)=>(
-            <Col key ={event._id} sm={12} md={6} lg={4} xl={3}>
-               <Event event={event}/>
-            </Col> 
-        ))}
-    </Row>
-    </>
+      <>
+        <h1>Latest Events</h1>
+        {loading ? (
+            <Loader />
+        ): error ? (
+            <h3>{error}</h3>
+        ) : (
+            <Row>
+              {events.map((event) => (
+                  <Col key={event.id} sm={12} mdf={6} lg={4} xl={3}>
+                    <Event event={event} />
+                  </Col>
+              ))}
+            </Row>
+        )}
+
+      </>
   )
   }
 
