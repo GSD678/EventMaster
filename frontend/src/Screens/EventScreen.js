@@ -1,23 +1,22 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
+import {useDispatch, useSelector} from "react-redux"
 import { Link, useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
-import axios from "axios"
+import Event from '../components/Event'
+import {listEventDetails} from "../actions/eventAction.js"
+import Loader from "../components/Loader";
 
 
 const EventScreen = () => {
 
-    const params = useParams();
+   const params = useParams();
+   const dispatch = useDispatch();
 
-    const [event, setEvent] = useState({})
-
-    useEffect(() =>{
-        const fetchEvent = async () => {
-            const {data} = await axios.get(`/api/events/${params.id}`)
-            setEvent(data)
-        }
-        fetchEvent()
-
-    },[params.id])
+   const eventDetails = useSelector((state) => state.eventDetails)
+    const {loading, error, event} = eventDetails
+   useEffect(() => {
+       dispatch(listEventDetails(params.id))
+   }, [dispatch,params.id])
 
     return (
         <>
@@ -33,7 +32,6 @@ const EventScreen = () => {
                     <ListGroup variant='flush'>
                         <ListGroup.Item>
                             <h3>{event.name}</h3>
-
                         </ListGroup.Item>
                         {/*<ListGroup.Item>*/}
                         {/*    <Rating*/}
@@ -74,6 +72,7 @@ const EventScreen = () => {
                                     className='btn-block'
                                     type='button'
                                     disabled={event.ticketsavail === 0}
+                                    onClick={}
                                 >
                                     Buy Ticket
                                 </Button>
@@ -83,6 +82,7 @@ const EventScreen = () => {
                 </Col>
             </Row>
         </>
+
     )
 }
 
