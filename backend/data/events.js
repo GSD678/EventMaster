@@ -1,6 +1,6 @@
 const events = [
     {
-      name: 'Summer Meltdown',
+      name: ' Meltdown',
       image: '/images/event1.jpg',
       description:'Somewhere on the dance floor the truth is revealed.Life is a silent disco if you are living it right.Come melt with us',
       category: 'Music',

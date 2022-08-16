@@ -70,5 +70,5 @@ const eventSchema = mongoose.Schema({
 })
 
 const Event = mongoose.model("Event", eventSchema)
-// console.log("event schema made")
+
 export default Event

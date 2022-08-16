@@ -4,6 +4,8 @@ import { Row, Col} from 'react-bootstrap'
 import Event from '../components/Event'
 import {listEvents} from "../actions/eventAction.js"
 import Loader from "../components/Loader";
+import Message from '../components/Message'
+
 
 const HomeScreen = () => {
 
@@ -20,7 +22,7 @@ const HomeScreen = () => {
         {loading ? (
             <Loader />
         ): error ? (
-            <h3>{error}</h3>
+          <Message variant='danger'>{error}</Message>
         ) : (
             <Row>
               {events.map((event) => (
