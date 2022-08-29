@@ -5,7 +5,7 @@ import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Event from '../components/Event'
 import {listEventDetails} from "../actions/eventAction.js"
 import Loader from "../components/Loader";
-import { Form } from 'react-bootstrap/lib/Navbar'
+// import { Form } from 'react-bootstrap/lib/Navbar'
 
 
 const EventScreen = () => {
@@ -73,7 +73,7 @@ const addToCartHandler = () => {
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
-                            {product.countInStock > 0 && (
+                            {event.countInStock > 0 && (
                              <ListGroup.Item>
                               <Row>
                                 <col>Qty</col>
@@ -83,7 +83,7 @@ const addToCartHandler = () => {
                                   value={qty}
                                   onChange={(e) => setQty(e.target.value)} 
                                   >
-                                   {[...Array(product.countInStock).keys()].map((x) => (
+                                   {[...Array(event.countInStock).keys()].map((x) => (
                                        <option key={x + 1} value={x + 1}>
                                       {x + 1}
                                      </option>
