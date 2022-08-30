@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from "react-redux"
 import { Link, useParams, useNavigate } from 'react-router-dom'
-import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
+import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
 import Event from '../components/Event'
 import {listEventDetails} from "../actions/eventAction.js"
 import Loader from "../components/Loader";
@@ -9,7 +9,7 @@ import Loader from "../components/Loader";
 
 
 const EventScreen = () => {
-   const[qty,setQty] = useState(0);
+   const[qty,setQty] = useState(1);
    const params = useParams();
    const dispatch = useDispatch();
    const navigate = useNavigate();
@@ -21,7 +21,7 @@ const EventScreen = () => {
    }, [dispatch,params.id])
 
 const addToCartHandler = () => {
-    navigate(`/cart/${params.id}?qty={qty}`)
+    navigate(`/cart/${params.id}?qty=${qty}`)
 }
 
     return (
@@ -73,27 +73,26 @@ const addToCartHandler = () => {
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
-                            {event.countInStock > 0 && (
-                             <ListGroup.Item>
-                              <Row>
-                                <col>Qty</col>
-                                <col>
-                                 <Form.Control
-                                  as='select'
-                                  value={qty}
-                                  onChange={(e) => setQty(e.target.value)} 
-                                  >
-                                   {[...Array(event.countInStock).keys()].map((x) => (
-                                       <option key={x + 1} value={x + 1}>
-                                      {x + 1}
-                                     </option>
-                                   ))}
-
-                                  </Form.Control>
-                                 </col>
-                                </Row>
-                               </ListGroup.Item>
-                            )}
+                              {event.ticketsavail > 0 && (
+                                <ListGroup.Item>
+                                  <Row>
+                                    <Col>Qty</Col>
+                                    <Col>
+                                      <Form.Control
+                                        as="select"
+                                        value={qty}
+                                        onChange={(e) => setQty(e.target.value)}
+                                      >
+                                        {[...Array(event.ticketsavail).keys()].map((x) => (
+                                          <option key={x + 1} value={x + 1}>
+                                            {x + 1}
+                                          </option>
+                                        ))}
+                                      </Form.Control>
+                                    </Col>
+                                  </Row>
+                                </ListGroup.Item>
+                              )}
 
 
 
