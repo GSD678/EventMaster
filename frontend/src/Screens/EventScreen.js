@@ -9,7 +9,7 @@ import { Form } from 'react-bootstrap/lib/Navbar'
 
 
 const EventScreen = () => {
-   const[qty,setQty] = useState(0);
+   const[qty,setQty] = useState(1);
    const params = useParams();
    const dispatch = useDispatch();
    const navigate = useNavigate();
