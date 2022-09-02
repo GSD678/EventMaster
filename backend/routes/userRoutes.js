@@ -11,6 +11,7 @@ router.post('/login', authUser)
 // @desc    Get the user profile
 // @route   GET /api/users/profile
 // @access  Private
-router.route('/profile').get(protect, getUserProfile)
+router.route('/profile')
+.get(protect, getUserProfile)
 export default router
-Footer
+
