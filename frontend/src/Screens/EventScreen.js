@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux"
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
 import Event from '../components/Event'
-import {listEventDetails} from "../actions/eventAction.js"
+import {listEventDetails} from "../actions/eventActions.js"
 import Loader from "../components/Loader";
 // import { Form } from 'react-bootstrap/lib/Navbar'
 
